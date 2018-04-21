@@ -1,2 +1,4 @@
-# Blast Commander
-CS381 Game Engine Architecture final project
+CS 381
+Assgnment 5
+Name: Zachary Cooper
+Email: cooper.zachary.t@gmail.com
