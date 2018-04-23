@@ -31,7 +31,6 @@ public:
 	void Tick(float dt);
 	void Stop();
 
-
 	//Ogre related stuff
 	Ogre::Root* mRoot;
 	Ogre::String mResourcesCfg;
