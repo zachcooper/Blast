@@ -10,6 +10,7 @@
 #include <InputMgr.h>
 #include <EntityMgr.h>
 #include <GameMgr.h>
+#include <UiMgr.h>
 
 #include <OgreSceneQuery.h>
 
@@ -50,7 +51,7 @@ void InputMgr::Init(){
 	  #elif defined OIS_LINUX_PLATFORM
 	  	  pl.insert(std::make_pair(std::string("x11_mouse_grab"), std::string("false")));
 	  	  pl.insert(std::make_pair(std::string("x11_mouse_hide"), std::string("false")));
-	  	  pl.insert(std::make_pair(std::string("x11_keyboard_grab"), std::string("false")));
+	  	  //pl.insert(std::make_pair(std::string("x11_keyboard_grab"), std::string("false")));
 	  	  pl.insert(std::make_pair(std::string("XAutoRepeatOn"), std::string("true")));
 	  #endif
 	  mInputMgr = OIS::InputManager::createInputSystem(pl);
@@ -246,6 +247,7 @@ bool InputMgr::mousePressed(const OIS::MouseEvent& me, OIS::MouseButtonID mid){
 	float diffy;
 	float diffz;
 
+	if (engine->uiMgr->mTrayMgr->injectMouseDown(me, mid)) return true;
     if (mid == OIS::MB_Left){ //mMouse->getMouseState().buttonDown(OIS::MB_Left)){
 		// get window height and width
     	Ogre::Real screenWidth = Ogre::Root::getSingleton().getAutoCreatedWindow()->getWidth();
@@ -286,5 +288,6 @@ return true;
 
 
 bool InputMgr::mouseReleased(const OIS::MouseEvent& me, OIS::MouseButtonID mid){
-	return true;
+	if (engine->uiMgr->mTrayMgr->injectMouseUp(me, mid)) return true;
+		return true;
 }
