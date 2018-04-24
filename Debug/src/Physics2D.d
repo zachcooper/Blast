@@ -1,6 +1,6 @@
 src/Physics2D.o: ../src/Physics2D.cpp \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Physics2D.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Aspect.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Physics2D.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Aspect.h \
  /usr/local/include/OGRE/OgreVector3.h \
  /usr/local/include/OGRE/OgrePrerequisites.h \
  /usr/local/include/OGRE/OgrePlatform.h \
@@ -15,7 +15,7 @@ src/Physics2D.o: ../src/Physics2D.cpp \
  /usr/local/include/OGRE/OgreMemoryNedPooling.h \
  /usr/local/include/OGRE/OgreMath.h \
  /usr/local/include/OGRE/OgreQuaternion.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Entity381.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Entity381.h \
  /usr/local/include/OGRE/OgreEntity.h \
  /usr/local/include/OGRE/OgreCommon.h \
  /usr/local/include/OGRE/OgreString.h \
@@ -125,12 +125,132 @@ src/Physics2D.o: ../src/Physics2D.cpp \
  /usr/local/include/OGRE/OgreFrameListener.h \
  /usr/local/include/OGRE/OgreConfigOptionMap.h \
  /usr/local/include/OGRE/OgreNameGenerator.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Engine.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Utils.h
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Engine.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/GfxMgr.h \
+ /usr/local/include/OGRE/OgreRoot.h \
+ /usr/local/include/OGRE/OgreSceneManagerEnumerator.h \
+ /usr/local/include/OGRE/OgreSceneManager.h \
+ /usr/local/include/OGRE/OgreLodStrategyManager.h \
+ /usr/local/include/OGRE/OgreLodStrategy.h \
+ /usr/local/include/OGRE/OgreWorkQueue.h \
+ /usr/local/include/OGRE/OgreWindowEventUtilities.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Mgr.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/InputMgr.h \
+ /usr/include/ois/OISEvents.h /usr/include/ois/OISPrereqs.h \
+ /usr/include/ois/OISConfig.h /usr/include/ois/OISInputManager.h \
+ /usr/include/ois/OISKeyboard.h /usr/include/ois/OISObject.h \
+ /usr/include/ois/OISInterface.h /usr/include/ois/OISEvents.h \
+ /usr/include/ois/OISMouse.h /usr/local/include/OGRE/SdkTrays.h \
+ /usr/local/include/OGRE/Ogre.h \
+ /usr/local/include/OGRE/OgreArchiveManager.h \
+ /usr/local/include/OGRE/OgreBillboardChain.h \
+ /usr/local/include/OGRE/OgreBillboardSet.h \
+ /usr/local/include/OGRE/OgreConfigFile.h \
+ /usr/local/include/OGRE/OgreControllerManager.h \
+ /usr/local/include/OGRE/OgrePredefinedControllers.h \
+ /usr/local/include/OGRE/OgreEntity.h \
+ /usr/local/include/OGRE/OgreGpuProgramManager.h \
+ /usr/local/include/OGRE/OgreHardwarePixelBuffer.h \
+ /usr/local/include/OGRE/OgreHardwareOcclusionQuery.h \
+ /usr/local/include/OGRE/OgreHighLevelGpuProgram.h \
+ /usr/local/include/OGRE/OgreHighLevelGpuProgramManager.h \
+ /usr/local/include/OGRE/OgreInstanceBatch.h \
+ /usr/local/include/OGRE/OgreInstancedEntity.h \
+ /usr/local/include/OGRE/OgreManualObject.h \
+ /usr/local/include/OGRE/OgreMeshManager.h \
+ /usr/local/include/OGRE/OgrePatchMesh.h \
+ /usr/local/include/OGRE/OgrePatchSurface.h \
+ /usr/local/include/OGRE/OgreMeshSerializer.h \
+ /usr/local/include/OGRE/OgreMeshSerializerImpl.h \
+ /usr/local/include/OGRE/OgreEdgeListBuilder.h \
+ /usr/local/include/OGRE/OgreParticleAffector.h \
+ /usr/local/include/OGRE/OgreParticleEmitter.h \
+ /usr/local/include/OGRE/OgreParticleEmitterCommands.h \
+ /usr/local/include/OGRE/OgreParticle.h \
+ /usr/local/include/OGRE/OgreBillboard.h \
+ /usr/local/include/OGRE/OgreParticleSystemManager.h \
+ /usr/local/include/OGRE/OgreParticleSystem.h \
+ /usr/local/include/OGRE/OgreParticleIterator.h \
+ /usr/local/include/OGRE/OgreProfiler.h \
+ /usr/local/include/OGRE/OgreRenderQueueInvocation.h \
+ /usr/local/include/OGRE/OgreRenderQueueListener.h \
+ /usr/local/include/OGRE/OgreRenderObjectListener.h \
+ /usr/local/include/OGRE/OgreRenderTargetListener.h \
+ /usr/local/include/OGRE/OgreRenderWindow.h \
+ /usr/local/include/OGRE/OgreResourceBackgroundQueue.h \
+ /usr/local/include/OGRE/OgreRibbonTrail.h \
+ /usr/local/include/OGRE/OgreRoot.h \
+ /usr/local/include/OGRE/OgreSkeletonManager.h \
+ /usr/local/include/OGRE/OgreSkeletonSerializer.h \
+ /usr/local/include/OGRE/OgreStaticGeometry.h \
+ /usr/local/include/OGRE/OgreSubEntity.h \
+ /usr/local/include/OGRE/OgreSubMesh.h \
+ /usr/local/include/OGRE/OgreCompositor.h \
+ /usr/local/include/OGRE/OgreCompositorManager.h \
+ /usr/local/include/OGRE/OgreCompositionTechnique.h \
+ /usr/local/include/OGRE/OgreCompositorChain.h \
+ /usr/local/include/OGRE/OgreCompositorInstance.h \
+ /usr/local/include/OGRE/OgreCompositionPass.h \
+ /usr/local/include/OGRE/OgreCompositionTargetPass.h \
+ /usr/local/include/OGRE/OgreWindowEventUtilities.h \
+ /usr/local/include/OGRE/OgreShadowCameraSetupFocused.h \
+ /usr/local/include/OGRE/OgrePolygon.h \
+ /usr/local/include/OGRE/OgreConvexBody.h \
+ /usr/local/include/OGRE/OgreShadowCameraSetupLiSPSM.h \
+ /usr/local/include/OGRE/OgreShadowCameraSetupPlaneOptimal.h \
+ /usr/local/include/OGRE/OgreShadowCameraSetupPSSM.h \
+ /usr/local/include/OGRE/Overlay/OgreOverlaySystem.h \
+ /usr/local/include/OGRE/Overlay/OgreOverlay.h \
+ /usr/local/include/OGRE/Overlay/OgreOverlayPrerequisites.h \
+ /usr/local/include/OGRE/OgrePrerequisites.h \
+ /usr/local/include/OGRE/OgreSceneNode.h \
+ /usr/local/include/OGRE/OgreIteratorWrappers.h \
+ /usr/local/include/OGRE/OgreMatrix4.h \
+ /usr/local/include/OGRE/Overlay/OgreOverlayContainer.h \
+ /usr/local/include/OGRE/Overlay/OgreOverlayElement.h \
+ /usr/local/include/OGRE/OgreString.h \
+ /usr/local/include/OGRE/OgreRenderable.h \
+ /usr/local/include/OGRE/OgreUTFString.h \
+ /usr/local/include/OGRE/OgreStringInterface.h \
+ /usr/local/include/OGRE/Overlay/OgreOverlayElementCommands.h \
+ /usr/local/include/OGRE/OgreColourValue.h \
+ /usr/local/include/OGRE/Overlay/OgreOverlayManager.h \
+ /usr/local/include/OGRE/OgreSingleton.h \
+ /usr/local/include/OGRE/OgreStringVector.h \
+ /usr/local/include/OGRE/OgreScriptLoader.h \
+ /usr/local/include/OGRE/OgreFrustum.h \
+ /usr/local/include/OGRE/Overlay/OgreFontManager.h \
+ /usr/local/include/OGRE/OgreResourceManager.h \
+ /usr/local/include/OGRE/Overlay/OgreFont.h \
+ /usr/local/include/OGRE/OgreResource.h \
+ /usr/local/include/OGRE/OgreTexture.h \
+ /usr/local/include/OGRE/OgreMaterial.h \
+ /usr/local/include/OGRE/OgreCommon.h \
+ /usr/local/include/OGRE/Overlay/OgreBorderPanelOverlayElement.h \
+ /usr/local/include/OGRE/Overlay/OgrePanelOverlayElement.h \
+ /usr/local/include/OGRE/Overlay/OgreTextAreaOverlayElement.h \
+ /usr/local/include/OGRE/Overlay/OgreOverlayElementFactory.h \
+ /usr/local/include/OGRE/OgreRenderQueueListener.h \
+ /usr/local/include/OGRE/InputContext.h /usr/include/ois/OIS.h \
+ /usr/include/ois/OISMouse.h /usr/include/ois/OISKeyboard.h \
+ /usr/include/ois/OISJoyStick.h /usr/include/ois/OISMultiTouch.h \
+ /usr/include/ois/OISInputManager.h /usr/include/ois/OISFactoryCreator.h \
+ /usr/include/ois/OISException.h /usr/include/ois/OISEffect.h \
+ /usr/include/ois/OISForceFeedback.h \
+ /usr/local/include/OGRE/SdkCameraMan.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/EntityMgr.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Types381.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/GameMgr.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/UiMgr.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/SoundMgr.h \
+ /usr/local/include/OGRE/OgreQuaternion.h \
+ /usr/local/include/OGRE/OgreFrameListener.h /usr/include/audio/wave.h \
+ /usr/include/AL/al.h /usr/include/AL/alc.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Utils.h
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Physics2D.h:
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Physics2D.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Aspect.h:
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Aspect.h:
 
 /usr/local/include/OGRE/OgreVector3.h:
 
@@ -160,7 +280,7 @@ src/Physics2D.o: ../src/Physics2D.cpp \
 
 /usr/local/include/OGRE/OgreQuaternion.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Entity381.h:
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Entity381.h:
 
 /usr/local/include/OGRE/OgreEntity.h:
 
@@ -382,6 +502,270 @@ src/Physics2D.o: ../src/Physics2D.cpp \
 
 /usr/local/include/OGRE/OgreNameGenerator.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Engine.h:
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Engine.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Utils.h:
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/GfxMgr.h:
+
+/usr/local/include/OGRE/OgreRoot.h:
+
+/usr/local/include/OGRE/OgreSceneManagerEnumerator.h:
+
+/usr/local/include/OGRE/OgreSceneManager.h:
+
+/usr/local/include/OGRE/OgreLodStrategyManager.h:
+
+/usr/local/include/OGRE/OgreLodStrategy.h:
+
+/usr/local/include/OGRE/OgreWorkQueue.h:
+
+/usr/local/include/OGRE/OgreWindowEventUtilities.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Mgr.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/InputMgr.h:
+
+/usr/include/ois/OISEvents.h:
+
+/usr/include/ois/OISPrereqs.h:
+
+/usr/include/ois/OISConfig.h:
+
+/usr/include/ois/OISInputManager.h:
+
+/usr/include/ois/OISKeyboard.h:
+
+/usr/include/ois/OISObject.h:
+
+/usr/include/ois/OISInterface.h:
+
+/usr/include/ois/OISEvents.h:
+
+/usr/include/ois/OISMouse.h:
+
+/usr/local/include/OGRE/SdkTrays.h:
+
+/usr/local/include/OGRE/Ogre.h:
+
+/usr/local/include/OGRE/OgreArchiveManager.h:
+
+/usr/local/include/OGRE/OgreBillboardChain.h:
+
+/usr/local/include/OGRE/OgreBillboardSet.h:
+
+/usr/local/include/OGRE/OgreConfigFile.h:
+
+/usr/local/include/OGRE/OgreControllerManager.h:
+
+/usr/local/include/OGRE/OgrePredefinedControllers.h:
+
+/usr/local/include/OGRE/OgreEntity.h:
+
+/usr/local/include/OGRE/OgreGpuProgramManager.h:
+
+/usr/local/include/OGRE/OgreHardwarePixelBuffer.h:
+
+/usr/local/include/OGRE/OgreHardwareOcclusionQuery.h:
+
+/usr/local/include/OGRE/OgreHighLevelGpuProgram.h:
+
+/usr/local/include/OGRE/OgreHighLevelGpuProgramManager.h:
+
+/usr/local/include/OGRE/OgreInstanceBatch.h:
+
+/usr/local/include/OGRE/OgreInstancedEntity.h:
+
+/usr/local/include/OGRE/OgreManualObject.h:
+
+/usr/local/include/OGRE/OgreMeshManager.h:
+
+/usr/local/include/OGRE/OgrePatchMesh.h:
+
+/usr/local/include/OGRE/OgrePatchSurface.h:
+
+/usr/local/include/OGRE/OgreMeshSerializer.h:
+
+/usr/local/include/OGRE/OgreMeshSerializerImpl.h:
+
+/usr/local/include/OGRE/OgreEdgeListBuilder.h:
+
+/usr/local/include/OGRE/OgreParticleAffector.h:
+
+/usr/local/include/OGRE/OgreParticleEmitter.h:
+
+/usr/local/include/OGRE/OgreParticleEmitterCommands.h:
+
+/usr/local/include/OGRE/OgreParticle.h:
+
+/usr/local/include/OGRE/OgreBillboard.h:
+
+/usr/local/include/OGRE/OgreParticleSystemManager.h:
+
+/usr/local/include/OGRE/OgreParticleSystem.h:
+
+/usr/local/include/OGRE/OgreParticleIterator.h:
+
+/usr/local/include/OGRE/OgreProfiler.h:
+
+/usr/local/include/OGRE/OgreRenderQueueInvocation.h:
+
+/usr/local/include/OGRE/OgreRenderQueueListener.h:
+
+/usr/local/include/OGRE/OgreRenderObjectListener.h:
+
+/usr/local/include/OGRE/OgreRenderTargetListener.h:
+
+/usr/local/include/OGRE/OgreRenderWindow.h:
+
+/usr/local/include/OGRE/OgreResourceBackgroundQueue.h:
+
+/usr/local/include/OGRE/OgreRibbonTrail.h:
+
+/usr/local/include/OGRE/OgreRoot.h:
+
+/usr/local/include/OGRE/OgreSkeletonManager.h:
+
+/usr/local/include/OGRE/OgreSkeletonSerializer.h:
+
+/usr/local/include/OGRE/OgreStaticGeometry.h:
+
+/usr/local/include/OGRE/OgreSubEntity.h:
+
+/usr/local/include/OGRE/OgreSubMesh.h:
+
+/usr/local/include/OGRE/OgreCompositor.h:
+
+/usr/local/include/OGRE/OgreCompositorManager.h:
+
+/usr/local/include/OGRE/OgreCompositionTechnique.h:
+
+/usr/local/include/OGRE/OgreCompositorChain.h:
+
+/usr/local/include/OGRE/OgreCompositorInstance.h:
+
+/usr/local/include/OGRE/OgreCompositionPass.h:
+
+/usr/local/include/OGRE/OgreCompositionTargetPass.h:
+
+/usr/local/include/OGRE/OgreWindowEventUtilities.h:
+
+/usr/local/include/OGRE/OgreShadowCameraSetupFocused.h:
+
+/usr/local/include/OGRE/OgrePolygon.h:
+
+/usr/local/include/OGRE/OgreConvexBody.h:
+
+/usr/local/include/OGRE/OgreShadowCameraSetupLiSPSM.h:
+
+/usr/local/include/OGRE/OgreShadowCameraSetupPlaneOptimal.h:
+
+/usr/local/include/OGRE/OgreShadowCameraSetupPSSM.h:
+
+/usr/local/include/OGRE/Overlay/OgreOverlaySystem.h:
+
+/usr/local/include/OGRE/Overlay/OgreOverlay.h:
+
+/usr/local/include/OGRE/Overlay/OgreOverlayPrerequisites.h:
+
+/usr/local/include/OGRE/OgrePrerequisites.h:
+
+/usr/local/include/OGRE/OgreSceneNode.h:
+
+/usr/local/include/OGRE/OgreIteratorWrappers.h:
+
+/usr/local/include/OGRE/OgreMatrix4.h:
+
+/usr/local/include/OGRE/Overlay/OgreOverlayContainer.h:
+
+/usr/local/include/OGRE/Overlay/OgreOverlayElement.h:
+
+/usr/local/include/OGRE/OgreString.h:
+
+/usr/local/include/OGRE/OgreRenderable.h:
+
+/usr/local/include/OGRE/OgreUTFString.h:
+
+/usr/local/include/OGRE/OgreStringInterface.h:
+
+/usr/local/include/OGRE/Overlay/OgreOverlayElementCommands.h:
+
+/usr/local/include/OGRE/OgreColourValue.h:
+
+/usr/local/include/OGRE/Overlay/OgreOverlayManager.h:
+
+/usr/local/include/OGRE/OgreSingleton.h:
+
+/usr/local/include/OGRE/OgreStringVector.h:
+
+/usr/local/include/OGRE/OgreScriptLoader.h:
+
+/usr/local/include/OGRE/OgreFrustum.h:
+
+/usr/local/include/OGRE/Overlay/OgreFontManager.h:
+
+/usr/local/include/OGRE/OgreResourceManager.h:
+
+/usr/local/include/OGRE/Overlay/OgreFont.h:
+
+/usr/local/include/OGRE/OgreResource.h:
+
+/usr/local/include/OGRE/OgreTexture.h:
+
+/usr/local/include/OGRE/OgreMaterial.h:
+
+/usr/local/include/OGRE/OgreCommon.h:
+
+/usr/local/include/OGRE/Overlay/OgreBorderPanelOverlayElement.h:
+
+/usr/local/include/OGRE/Overlay/OgrePanelOverlayElement.h:
+
+/usr/local/include/OGRE/Overlay/OgreTextAreaOverlayElement.h:
+
+/usr/local/include/OGRE/Overlay/OgreOverlayElementFactory.h:
+
+/usr/local/include/OGRE/OgreRenderQueueListener.h:
+
+/usr/local/include/OGRE/InputContext.h:
+
+/usr/include/ois/OIS.h:
+
+/usr/include/ois/OISMouse.h:
+
+/usr/include/ois/OISKeyboard.h:
+
+/usr/include/ois/OISJoyStick.h:
+
+/usr/include/ois/OISMultiTouch.h:
+
+/usr/include/ois/OISInputManager.h:
+
+/usr/include/ois/OISFactoryCreator.h:
+
+/usr/include/ois/OISException.h:
+
+/usr/include/ois/OISEffect.h:
+
+/usr/include/ois/OISForceFeedback.h:
+
+/usr/local/include/OGRE/SdkCameraMan.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/EntityMgr.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Types381.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/GameMgr.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/UiMgr.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/SoundMgr.h:
+
+/usr/local/include/OGRE/OgreQuaternion.h:
+
+/usr/local/include/OGRE/OgreFrameListener.h:
+
+/usr/include/audio/wave.h:
+
+/usr/include/AL/al.h:
+
+/usr/include/AL/alc.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Utils.h:

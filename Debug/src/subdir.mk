@@ -14,6 +14,8 @@ CPP_SRCS += \
 ../src/InputMgr.cpp \
 ../src/Mgr.cpp \
 ../src/Physics2D.cpp \
+../src/SoundMgr.cpp \
+../src/UiMgr.cpp \
 ../src/Utils.cpp \
 ../src/main.cpp 
 
@@ -28,6 +30,8 @@ OBJS += \
 ./src/InputMgr.o \
 ./src/Mgr.o \
 ./src/Physics2D.o \
+./src/SoundMgr.o \
+./src/UiMgr.o \
 ./src/Utils.o \
 ./src/main.o 
 
@@ -42,6 +46,8 @@ CPP_DEPS += \
 ./src/InputMgr.d \
 ./src/Mgr.d \
 ./src/Physics2D.d \
+./src/SoundMgr.d \
+./src/UiMgr.d \
 ./src/Utils.d \
 ./src/main.d 
 
@@ -50,7 +56,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -I/usr/local/include/OGRE -I/usr/local/include/OGRE/Overlay -I/usr/include/OIS -I"/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	g++ -I"/home/philipsmith/eclipse-workspace/Blast-Commander/inc" -I/usr/include/AL -I/usr/include/audio -I/usr/include/ois -I/usr/local/include/OGRE -I/usr/include/OIS -I/usr/local/include/OGRE/Overlay -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

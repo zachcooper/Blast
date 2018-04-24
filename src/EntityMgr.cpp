@@ -14,9 +14,7 @@ EntityMgr::EntityMgr(Engine *eng): Mgr(eng){
 	selectedEntityIndex = -1;
 }
 
-EntityMgr::~EntityMgr(){
-
-}
+EntityMgr::~EntityMgr(){}
 
 void EntityMgr::CreateEntity(std::string meshfilename, Ogre::Vector3 pos){
 	Entity381 *ent = new Entity381(this->engine, meshfilename, pos, count);

@@ -5,6 +5,10 @@
 #include <Mgr.h>
 #include <Entity381.h>
 #include <Types381.h>
+#include <OgreVector3.h>
+#include <OgreSceneManager.h>
+#include <OgreSceneNode.h>
+#include <OgreEntity.h>
 
 class EntityMgr: public Mgr {
 public:

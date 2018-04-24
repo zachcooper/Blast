@@ -8,11 +8,17 @@
 #ifndef ENGINE_H_
 #define ENGINE_H_
 
+#include <GfxMgr.h>
+#include <InputMgr.h>
+#include <EntityMgr.h>
+#include <GameMgr.h>
+#include <UiMgr.h>
+#include <SoundMgr.h>
+
 class EntityMgr;
 class GameMgr;
 class GfxMgr;
 class InputMgr;
-class UiMgr;
 
 class Engine {
 public:
@@ -24,6 +30,8 @@ public:
 	GfxMgr    *gfxMgr;
 	InputMgr  *inputMgr;
 	UiMgr	  *uiMgr;
+	OgreSND::SoundMgr *soundMgr;
+
 
 	void Init();
 	void Run();

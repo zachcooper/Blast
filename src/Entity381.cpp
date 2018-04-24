@@ -47,6 +47,11 @@ Entity381::Entity381(Engine *engine, std::string meshfname, Ogre::Vector3 pos, i
 	this->desiredAltitude = 0;
 	this->climbRate = 0;
 
+	this->playSound = false;
+	this->didSelectSoundPlay = false;
+	this->soundFile = "BoatSound.wav";
+	this->audioId = 0;
+
 }
 
 Entity381::~Entity381(){
@@ -71,6 +76,11 @@ Carrier::Carrier(Engine *engine, std::string meshfname, Ogre::Vector3 pos, int i
 	this->altitude = 0;
 	this->desiredAltitude = 0;
 	this->climbRate = 0;
+
+	this->playSound = true;
+	this->didSelectSoundPlay = false;
+	this->soundFile = "BoatSound.wav";
+	this->audioId = 1;
 }
 
 Carrier::~Carrier(){

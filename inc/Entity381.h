@@ -35,6 +35,12 @@ public:
   float desiredHeading, desiredSpeed;
   float heading, speed;
 
+  //sound
+	std::string soundFile;
+	bool playSound;
+	unsigned int audioId;
+	bool didSelectSoundPlay;
+
   std::vector<Aspect* > aspects;
 
   void Tick(float dt);

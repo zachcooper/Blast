@@ -124,8 +124,12 @@ src/GfxMgr.o: ../src/GfxMgr.cpp /usr/local/include/OGRE/OgreEntity.h \
  /usr/local/include/OGRE/OgreRenderWindow.h \
  /usr/local/include/OGRE/OgreConfigFile.h \
  /usr/local/include/OGRE/OgreException.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Engine.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/GfxMgr.h \
+ /usr/local/include/OGRE/OgrePlane.h \
+ /usr/local/include/OGRE/OgreMeshManager.h \
+ /usr/local/include/OGRE/OgrePatchMesh.h \
+ /usr/local/include/OGRE/OgrePatchSurface.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Engine.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/GfxMgr.h \
  /usr/local/include/OGRE/OgreRoot.h \
  /usr/local/include/OGRE/OgreSceneManagerEnumerator.h \
  /usr/local/include/OGRE/OgreSceneManager.h \
@@ -133,13 +137,13 @@ src/GfxMgr.o: ../src/GfxMgr.cpp /usr/local/include/OGRE/OgreEntity.h \
  /usr/local/include/OGRE/OgreLodStrategy.h \
  /usr/local/include/OGRE/OgreWorkQueue.h \
  /usr/local/include/OGRE/OgreWindowEventUtilities.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Mgr.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/InputMgr.h \
- /usr/include/OIS/OISEvents.h /usr/include/OIS/OISPrereqs.h \
- /usr/include/OIS/OISConfig.h /usr/include/OIS/OISInputManager.h \
- /usr/include/OIS/OISKeyboard.h /usr/include/OIS/OISObject.h \
- /usr/include/OIS/OISInterface.h /usr/include/OIS/OISEvents.h \
- /usr/include/OIS/OISMouse.h /usr/local/include/OGRE/SdkTrays.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Mgr.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/InputMgr.h \
+ /usr/include/ois/OISEvents.h /usr/include/ois/OISPrereqs.h \
+ /usr/include/ois/OISConfig.h /usr/include/ois/OISInputManager.h \
+ /usr/include/ois/OISKeyboard.h /usr/include/ois/OISObject.h \
+ /usr/include/ois/OISInterface.h /usr/include/ois/OISEvents.h \
+ /usr/include/ois/OISMouse.h /usr/local/include/OGRE/SdkTrays.h \
  /usr/local/include/OGRE/Ogre.h \
  /usr/local/include/OGRE/OgreArchiveManager.h \
  /usr/local/include/OGRE/OgreBillboardChain.h \
@@ -157,8 +161,6 @@ src/GfxMgr.o: ../src/GfxMgr.cpp /usr/local/include/OGRE/OgreEntity.h \
  /usr/local/include/OGRE/OgreInstancedEntity.h \
  /usr/local/include/OGRE/OgreManualObject.h \
  /usr/local/include/OGRE/OgreMeshManager.h \
- /usr/local/include/OGRE/OgrePatchMesh.h \
- /usr/local/include/OGRE/OgrePatchSurface.h \
  /usr/local/include/OGRE/OgreMeshSerializer.h \
  /usr/local/include/OGRE/OgreMeshSerializerImpl.h \
  /usr/local/include/OGRE/OgreEdgeListBuilder.h \
@@ -230,14 +232,25 @@ src/GfxMgr.o: ../src/GfxMgr.cpp /usr/local/include/OGRE/OgreEntity.h \
  /usr/local/include/OGRE/Overlay/OgreTextAreaOverlayElement.h \
  /usr/local/include/OGRE/Overlay/OgreOverlayElementFactory.h \
  /usr/local/include/OGRE/OgreRenderQueueListener.h \
- /usr/local/include/OGRE/InputContext.h /usr/include/OIS/OIS.h \
- /usr/include/OIS/OISMouse.h /usr/include/OIS/OISKeyboard.h \
- /usr/include/OIS/OISJoyStick.h /usr/include/OIS/OISMultiTouch.h \
- /usr/include/OIS/OISInputManager.h /usr/include/OIS/OISFactoryCreator.h \
- /usr/include/OIS/OISException.h /usr/include/OIS/OISEffect.h \
- /usr/include/OIS/OISForceFeedback.h \
+ /usr/local/include/OGRE/InputContext.h /usr/include/ois/OIS.h \
+ /usr/include/ois/OISMouse.h /usr/include/ois/OISKeyboard.h \
+ /usr/include/ois/OISJoyStick.h /usr/include/ois/OISMultiTouch.h \
+ /usr/include/ois/OISInputManager.h /usr/include/ois/OISFactoryCreator.h \
+ /usr/include/ois/OISException.h /usr/include/ois/OISEffect.h \
+ /usr/include/ois/OISForceFeedback.h \
  /usr/local/include/OGRE/SdkCameraMan.h \
- /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/DebugDrawer.h
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/EntityMgr.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Entity381.h \
+ /usr/local/include/OGRE/OgreVector3.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Aspect.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Types381.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/GameMgr.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/UiMgr.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/SoundMgr.h \
+ /usr/local/include/OGRE/OgreQuaternion.h \
+ /usr/local/include/OGRE/OgreFrameListener.h /usr/include/audio/wave.h \
+ /usr/include/AL/al.h /usr/include/AL/alc.h \
+ /home/philipsmith/eclipse-workspace/Blast-Commander/inc/DebugDrawer.h
 
 /usr/local/include/OGRE/OgreEntity.h:
 
@@ -495,9 +508,17 @@ src/GfxMgr.o: ../src/GfxMgr.cpp /usr/local/include/OGRE/OgreEntity.h \
 
 /usr/local/include/OGRE/OgreException.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Engine.h:
+/usr/local/include/OGRE/OgrePlane.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/GfxMgr.h:
+/usr/local/include/OGRE/OgreMeshManager.h:
+
+/usr/local/include/OGRE/OgrePatchMesh.h:
+
+/usr/local/include/OGRE/OgrePatchSurface.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Engine.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/GfxMgr.h:
 
 /usr/local/include/OGRE/OgreRoot.h:
 
@@ -513,27 +534,27 @@ src/GfxMgr.o: ../src/GfxMgr.cpp /usr/local/include/OGRE/OgreEntity.h \
 
 /usr/local/include/OGRE/OgreWindowEventUtilities.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Mgr.h:
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Mgr.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/InputMgr.h:
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/InputMgr.h:
 
-/usr/include/OIS/OISEvents.h:
+/usr/include/ois/OISEvents.h:
 
-/usr/include/OIS/OISPrereqs.h:
+/usr/include/ois/OISPrereqs.h:
 
-/usr/include/OIS/OISConfig.h:
+/usr/include/ois/OISConfig.h:
 
-/usr/include/OIS/OISInputManager.h:
+/usr/include/ois/OISInputManager.h:
 
-/usr/include/OIS/OISKeyboard.h:
+/usr/include/ois/OISKeyboard.h:
 
-/usr/include/OIS/OISObject.h:
+/usr/include/ois/OISObject.h:
 
-/usr/include/OIS/OISInterface.h:
+/usr/include/ois/OISInterface.h:
 
-/usr/include/OIS/OISEvents.h:
+/usr/include/ois/OISEvents.h:
 
-/usr/include/OIS/OISMouse.h:
+/usr/include/ois/OISMouse.h:
 
 /usr/local/include/OGRE/SdkTrays.h:
 
@@ -570,10 +591,6 @@ src/GfxMgr.o: ../src/GfxMgr.cpp /usr/local/include/OGRE/OgreEntity.h \
 /usr/local/include/OGRE/OgreManualObject.h:
 
 /usr/local/include/OGRE/OgreMeshManager.h:
-
-/usr/local/include/OGRE/OgrePatchMesh.h:
-
-/usr/local/include/OGRE/OgrePatchSurface.h:
 
 /usr/local/include/OGRE/OgreMeshSerializer.h:
 
@@ -719,26 +736,52 @@ src/GfxMgr.o: ../src/GfxMgr.cpp /usr/local/include/OGRE/OgreEntity.h \
 
 /usr/local/include/OGRE/InputContext.h:
 
-/usr/include/OIS/OIS.h:
+/usr/include/ois/OIS.h:
 
-/usr/include/OIS/OISMouse.h:
+/usr/include/ois/OISMouse.h:
 
-/usr/include/OIS/OISKeyboard.h:
+/usr/include/ois/OISKeyboard.h:
 
-/usr/include/OIS/OISJoyStick.h:
+/usr/include/ois/OISJoyStick.h:
 
-/usr/include/OIS/OISMultiTouch.h:
+/usr/include/ois/OISMultiTouch.h:
 
-/usr/include/OIS/OISInputManager.h:
+/usr/include/ois/OISInputManager.h:
 
-/usr/include/OIS/OISFactoryCreator.h:
+/usr/include/ois/OISFactoryCreator.h:
 
-/usr/include/OIS/OISException.h:
+/usr/include/ois/OISException.h:
 
-/usr/include/OIS/OISEffect.h:
+/usr/include/ois/OISEffect.h:
 
-/usr/include/OIS/OISForceFeedback.h:
+/usr/include/ois/OISForceFeedback.h:
 
 /usr/local/include/OGRE/SdkCameraMan.h:
 
-/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/DebugDrawer.h:
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/EntityMgr.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Entity381.h:
+
+/usr/local/include/OGRE/OgreVector3.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Aspect.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Types381.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/GameMgr.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/UiMgr.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/SoundMgr.h:
+
+/usr/local/include/OGRE/OgreQuaternion.h:
+
+/usr/local/include/OGRE/OgreFrameListener.h:
+
+/usr/include/audio/wave.h:
+
+/usr/include/AL/al.h:
+
+/usr/include/AL/alc.h:
+
+/home/philipsmith/eclipse-workspace/Blast-Commander/inc/DebugDrawer.h:
