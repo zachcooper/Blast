@@ -26,6 +26,7 @@ void EntityMgr::CreateCarrier(Ogre::Vector3 pos){
 	Carrier *ent = new Carrier(this->engine, "cvn68.mesh", pos, count);
 	count++;
 	entities.push_back((Entity381 *) ent);
+	shipEntity = entities.back();
 }
 
 void EntityMgr::CreateRobot(Ogre::Vector3 pos){
