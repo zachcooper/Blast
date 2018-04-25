@@ -24,6 +24,7 @@ public:
   Ogre::Entity*    ogreEntity;
   float acceleration, turnRate;
   float minSpeed, maxSpeed;
+  Ogre::Real mWalkSpeed;
 
   // flying
   float altitude, desiredAltitude, climbRate;
@@ -57,6 +58,11 @@ public:
 
 };
 
+class Robot: Entity381 {
+public:
+	Robot(Engine *engine, std::string meshfilename, Ogre::Vector3 pos, int identity);
+	virtual ~Robot();
 
+};
 
 #endif // #ifndef __Entity381_h_

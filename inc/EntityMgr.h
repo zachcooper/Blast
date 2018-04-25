@@ -34,6 +34,7 @@ protected:
 private:
   void CreateEntity(std::string meshfilename, Ogre::Vector3 pos);
   void CreateCarrier(Ogre::Vector3 pos);
+  void CreateRobot(Ogre::Vector3 pos);
   int count;
 
 };

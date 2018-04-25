@@ -16,7 +16,8 @@
 #include <OgreOverlay.h>
 #include <OgreSceneNode.h>
 #include <OgreMeshManager.h>
-
+#include <OgreManualObject.h>
+#include <OgreStaticGeometry.h>
 
 GameMgr::GameMgr(Engine *engine): Mgr(engine) {
 	cameraNode = 0;
@@ -39,13 +40,6 @@ void GameMgr::LoadLevel(){
 	  Ogre::Light* light = engine->gfxMgr->mSceneMgr->createLight("MainLight");
 	  light->setPosition(20.0, 80.0, 50.0);
 
-	  // a fixed point in the ocean so you can see relative motion
-
-	  Ogre::Entity* ogreEntityFixed = engine->gfxMgr->mSceneMgr->createEntity("robot.mesh");
-	  Ogre::SceneNode* sceneNode = engine->gfxMgr->mSceneMgr->getRootSceneNode()->createChildSceneNode(Ogre::Vector3(0, 100, -200));
-	  sceneNode->attachObject(ogreEntityFixed);
-	  sceneNode->showBoundingBox(true);
-
 	  // A node to attach the camera to so we can move the camera node instead of the camera.
 	  cameraNode = engine->gfxMgr->mSceneMgr->getRootSceneNode()->createChildSceneNode();
 	  cameraNode->setPosition(0, 200, 500);
@@ -59,6 +53,12 @@ void GameMgr::LoadLevel(){
 
 void GameMgr::MakeEntities(){
 	Ogre::Vector3 pos = Ogre::Vector3(-1000, 0, 0);
+	Ogre::Vector3 position = Ogre::Vector3(0, 0, 0);
+
+	for (int i = 0; i < 10; i++){
+		engine->entityMgr->CreateEntityOfTypeAtPosition(RobotType, position);
+		position.x += 100;
+	}
 
 	pos.x += 500;
 	engine->entityMgr->CreateEntityOfTypeAtPosition(CarrierType, pos);

@@ -28,6 +28,12 @@ void EntityMgr::CreateCarrier(Ogre::Vector3 pos){
 	entities.push_back((Entity381 *) ent);
 }
 
+void EntityMgr::CreateRobot(Ogre::Vector3 pos){
+	Robot *ent = new Robot(this->engine, "robot.mesh", pos, count);
+	count++;
+	entities.push_back((Entity381 *) ent);
+}
+
 void EntityMgr::SelectNextEntity(bool plus){
 	if(selectedEntityIndex >= count - 1) {
 		selectedEntityIndex = 0;
@@ -47,6 +53,10 @@ void EntityMgr::CreateEntityOfTypeAtPosition(EntityTypes entType, Ogre::Vector3 
 
 	case CarrierType:
 		CreateCarrier(pos);
+		break;
+
+	case RobotType:
+		CreateRobot(pos);
 		break;
 
 	default:

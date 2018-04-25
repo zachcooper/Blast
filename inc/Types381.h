@@ -4,6 +4,7 @@
 enum EntityTypes {
 
 	CarrierType,
+	RobotType,
 
 };
 

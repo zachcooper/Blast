@@ -52,6 +52,7 @@ Entity381::Entity381(Engine *engine, std::string meshfname, Ogre::Vector3 pos, i
 	this->soundFile = "BoatSound.wav";
 	this->audioId = 0;
 
+	this->mWalkSpeed = 5;
 }
 
 Entity381::~Entity381(){
@@ -87,7 +88,14 @@ Carrier::~Carrier(){
 
 }
 //-------------------------------------------------------------------------------------------------------------------------------
+Robot::Robot(Engine *engine, std::string meshfname, Ogre::Vector3 pos, int ident):
+		Entity381(engine, meshfname, pos, ident){
 
+}
+
+Robot::~Robot(){
+
+}
 //-------------------------------------------------------------------------------------------------------------------------------
 
 
