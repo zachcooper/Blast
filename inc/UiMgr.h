@@ -40,6 +40,8 @@ protected:
     virtual bool mouseReleased(const OIS::MouseEvent &arg, OIS::MouseButtonID id);
 
     void buttonHit(OgreBites::Button *b);
+    void Splash();
+    void Hide();
 
 public:
 

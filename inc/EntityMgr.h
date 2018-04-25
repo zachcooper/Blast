@@ -20,6 +20,7 @@ public:
   std::vector<Entity381*> entities;
   Entity381* selectedEntity;
   int selectedEntityIndex;
+  Entity381* shipEntity;
 
 
   //Ogre::SceneManager *sceneMgr;
