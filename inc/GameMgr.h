@@ -21,6 +21,7 @@ public:
 	void MakeGround();
 	void MakeSky();
 	void MakeEntities();
+	void createGrassMesh();
 
 	Ogre::SceneNode *cameraNode;
 	Ogre::Plane myPlane;
