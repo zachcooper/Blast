@@ -41,8 +41,20 @@ void UiMgr::stop(){
 
 }
 
+void UiMgr::Splash()
+{
+	mTrayMgr->showLoadingBar();
+}
+
+void UiMgr::Hide()
+{
+	mTrayMgr->hideLoadingBar();
+}
+
 void UiMgr::LoadLevel(){
 
+	Splash();
+	//Hide();
 	healthButton = mTrayMgr->createButton(OgreBites::TL_LEFT, "HealthButton", "Health Drain");
 	enemyHealthButton = mTrayMgr->createButton(OgreBites::TL_RIGHT, "EnemyHealthButton", "Enemy Drain");
 
@@ -59,7 +71,26 @@ void UiMgr::LoadLevel(){
 void UiMgr::Tick(float dt){
 	mTrayMgr->refreshCursor();
 
+	Ogre::Vector3 diff;
+
+	for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i++)
+	{
+		diff = engine->entityMgr->shipEntity->position - engine->entityMgr->entities[i]->position;
+		if(engine->entityMgr->entities[i] != engine->entityMgr->shipEntity)
+		{
+			if (diff.length() < 1.0)
+			{
+				health -= 0.1;
+				pbar->setProgress(health);
+			}
+		}
+	}
+	if(engine->inputMgr->mKeyboard->isKeyDown(OIS::KC_RETURN))
+	{
+		mTrayMgr->hideLoadingBar();
+	}
 }
+
 
 void UiMgr::windowResized(Ogre::RenderWindow* rw){
 	unsigned int width, height, depth;
