@@ -52,6 +52,11 @@ Entity381::Entity381(Engine *engine, std::string meshfname, Ogre::Vector3 pos, i
 	this->soundFile = "BoatSound.wav";
 	this->audioId = 0;
 
+    this->mDirection == Ogre::Vector3::ZERO;
+    this->mDestination== Ogre::Vector3::ZERO;
+    this->mDistance = 0;
+    this->mAnimation = 0;
+
 	this->mWalkSpeed = 5;
 }
 

@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/AnimationMgr.cpp \
 ../src/Aspect.cpp \
 ../src/DebugDrawer.cpp \
 ../src/Engine.cpp \
@@ -20,6 +21,7 @@ CPP_SRCS += \
 ../src/main.cpp 
 
 OBJS += \
+./src/AnimationMgr.o \
 ./src/Aspect.o \
 ./src/DebugDrawer.o \
 ./src/Engine.o \
@@ -36,6 +38,7 @@ OBJS += \
 ./src/main.o 
 
 CPP_DEPS += \
+./src/AnimationMgr.d \
 ./src/Aspect.d \
 ./src/DebugDrawer.d \
 ./src/Engine.d \
@@ -56,7 +59,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -I"/home/philipsmith/eclipse-workspace/Blast-Commander/inc" -I/usr/include/AL -I/usr/include/audio -I/usr/include/ois -I/usr/local/include/OGRE -I/usr/include/OIS -I/usr/local/include/OGRE/Overlay -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	g++ -I/usr/local/include/OGRE -I/usr/include/audio -I/usr/include/AL -I/usr/local/include/OGRE/Overlay -I/usr/include/OIS -I"/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

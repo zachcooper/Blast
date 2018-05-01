@@ -1,4 +1,4 @@
 src/Utils.o: ../src/Utils.cpp \
- /home/philipsmith/eclipse-workspace/Blast-Commander/inc/Utils.h
+ /home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Utils.h
 
-/home/philipsmith/eclipse-workspace/Blast-Commander/inc/Utils.h:
+/home/zachcooper/eclipse-workspace/BlastCommander_v0/inc/Utils.h:
