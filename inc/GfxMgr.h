@@ -13,6 +13,7 @@
 
 
 #include <Mgr.h>
+#include <DebugDrawer.h>
 
 
 class GfxMgr:
@@ -38,6 +39,7 @@ public:
 	Ogre::RenderWindow* mWindow;
 	Ogre::SceneManager* mSceneMgr;
 	Ogre::Camera* mCamera;
+	DebugDrawer* debugDrawer;
 
 };
 
