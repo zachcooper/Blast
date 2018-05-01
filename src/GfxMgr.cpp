@@ -21,7 +21,7 @@
 #include <Engine.h>
 #include <GfxMgr.h>
 #include <InputMgr.h>
-#include <DebugDrawer.h>
+
 
 GfxMgr::GfxMgr(Engine *engine): Mgr(engine) {
 
@@ -83,7 +83,8 @@ GfxMgr::GfxMgr(Engine *engine): Mgr(engine) {
 
   //-----------------------------------------------------------------------
   Ogre::WindowEventUtilities::addWindowEventListener(mWindow, this);
-  new DebugDrawer(mSceneMgr, 0.5);
+  debugDrawer = new DebugDrawer(mSceneMgr, 0.5);
+
 }
 
 GfxMgr::~GfxMgr() {

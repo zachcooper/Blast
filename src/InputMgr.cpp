@@ -270,6 +270,7 @@ bool InputMgr::mousePressed(const OIS::MouseEvent& me, OIS::MouseButtonID mid){
         		diffx = (point.x) - (engine->entityMgr->entities[i]->position.x);
         		diffy = (point.y) - (engine->entityMgr->entities[i]->position.y);
         		diffz = (point.z) - (engine->entityMgr->entities[i]->position.z);
+        		engine->gfxMgr->debugDrawer->getSingleton().drawLine(engine->entityMgr->shipEntity->position, point, Ogre::ColourValue::Red );
 
     			if(diffx <= 150 && diffx >= -150 && diffy <= 150 && diffy >= -150 && diffz <= 150 && diffz >= -150){
 					if(engine->entityMgr->entities[i]->isSelected == true){
