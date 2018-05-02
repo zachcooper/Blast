@@ -86,8 +86,6 @@ void SoundMgr::initialize(void){
 
 	//alGenSources(OgreSND::maxAudioSources, this->sourcesInfo.sources);
 	//printError("Generating sources");
-
-	//syncListenerToCamera(); //setup listener
         
 	isEnabled = true;
 
@@ -106,18 +104,18 @@ void SoundMgr::initialize(void){
 	std::string filename = "assets/sounds/backgroundMusic.wav";
 	if (this->reserveAudio(filename, true, sid)){
 		std::cout << "background music loaded" << std::endl;
-                backgroundMusicSource = sourceInfo[sid].source;
-                this->loadStartBackground();
-        }
+		backgroundMusicSource = sourceInfo[sid].source;
+		this->loadStartBackground();
+	}
 	std::cout << "background music loaded" << std::endl;
   
-        //filename = "data/watercraft/sounds/explosion.wav";
-        //default explosion sound for all entities
-        if (this->reserveAudio(filename, false, sid)){
-            battleSoundSource = sourceInfo[sid].source;
-            alSourcei(this->battleSoundSource, AL_REFERENCE_DISTANCE, 2000.0f);
-            alSourcei(this->battleSoundSource, AL_MAX_DISTANCE, 8000.0f);
-        }
+	filename = "assets/sounds/explosion.wav";
+	//default explosion sound for all entities
+	if (this->reserveAudio(filename, false, sid)){
+		battleSoundSource = sourceInfo[sid].source;
+		alSourcei(this->battleSoundSource, AL_REFERENCE_DISTANCE, 2000.0f);
+		alSourcei(this->battleSoundSource, AL_MAX_DISTANCE, 8000.0f);
+	}
 
 	return;
 
@@ -126,35 +124,11 @@ void SoundMgr::initialize(void){
 bool SoundMgr::initWatercraftSounds(){
         //registering all sounds
 		std::string selectionFilename = "assets/sounds/takeYourOrder.wav";
-        std::string selection2Filename = "assets/sounds/GoodDay.wav";
-        //std::string createShipFilename = "data/watercraft/sounds/boatMoving.wav";
-        //std::string createBuildingFilename = "data/watercraft/sounds/clong.wav";
-        for(std::vector<Entity381 *>::const_iterator et = engine->entityMgr->entities.begin(); et != engine->entityMgr->entities.end(); ++et)
-        	{
-            //this->registerBattleSound(et, battleFilename);
-            if (true){
-                if ((*et)->audioId == 1){
-                        this->registerSelection(**et, selection2Filename);
-                }
-                else{
-                        this->registerSelection(**et, selectionFilename);
-                }
-                //this->registerCreate(et, createShipFilename);
-            }
-            else{
-                //no selection sound for buildings right now
-                //this->registerCreate(et, createBuildingFilename);
-            }
+        for(std::vector<Entity381 *>::const_iterator et = engine->entityMgr->entities.begin(); et != engine->entityMgr->entities.end(); ++et) {
+        	this->registerSelection(**et, selectionFilename);
         }
         return true;
 }
-
-/*bool SoundMgr::isEntityShip(FastEcslent::EntityType et){
-    if (et < 7)
-        return true;
-    else
-        return false;
-}*/
 
 void SoundMgr::enable(){
     isEnabled = true;
@@ -230,10 +204,11 @@ void SoundMgr::loadLevel(void){
 
  
 void SoundMgr::attachSelectedNodeToSoundIndex(Entity381 *ent, unsigned int index){
-        if (index == -1) //if there is no defined sound for the specified type, don't do anything
-                return;
-        
-        this->playAudio(this->sourceInfo[index].source, true);  //second argument is added as true since it was causing nonresponsiveness when method is called again before the sound ends
+	//if there is no defined sound for the specified type, don't do anything
+	if (index == (unsigned int)-1) return;
+
+	 //second argument is added as true since it was causing nonresponsiveness when method is called again before the sound ends
+	this->playAudio(this->sourceInfo[index].source, true);
 	Ogre::Vector3 pos = ent->position;
 	setSoundPosition(this->sourceInfo[index].source, pos);
 }
@@ -245,7 +220,7 @@ void SoundMgr::tick(double dtime){
         //selection sound
 		for(std::vector<Entity381 *>::const_iterator it = engine->entityMgr->entities.begin(); it != engine->entityMgr->entities.end(); ++it){
            if ((*it)->isSelected && !(*it)->didSelectSoundPlay){
-        	   playSelectionSound(*(*it));
+        	   //playSelectionSound(*(*it));
         	   (*it)->didSelectSoundPlay = true;
            }
            else if (!(*it)->isSelected && (*it)->didSelectSoundPlay){
@@ -261,6 +236,7 @@ bool SoundMgr::playSelectionSound(Entity381 et){
             std::cout << "There is no registered selection sounds for this entity type" << std::endl;
             return false; //there is no sound to play
         }
+        std::cout << "Play selection audioId sound: " << et.audioId << std::endl;
         this->playAudioSourceIndex(et.audioId);
         setSoundPosition(sourceInfo[et.audioId].source, pos);
         
@@ -771,8 +747,8 @@ bool SoundMgr::loadStartBackground(){
 // Returns true if we can play the sound. Rewinds sound if already playing and forceRestart is true,
 // false if error
 bool SoundMgr::playAudio(ALuint audioId, bool forceRestart ){
-        if (!this->isEnabled)
-                return false;
+    if (!this->isEnabled)
+        return false;
 	if (!alIsSource(audioId))
 		return false;
 

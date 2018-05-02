@@ -24,6 +24,15 @@
 
 class Entity381;
 
+enum Sounds {
+	BACKGROUND,
+	SELECTION,
+	PLAYER_GUN,
+	PLAYER_HIT,
+	ENEMY_GUN,
+	ENEMY_HIT
+};
+
 namespace OgreSND {
     const int soundPerEnt = 3;      // max different sounds to randomly choose per entity
 	const int maxAudioBuffers = 63; // + 1 for background music
@@ -59,7 +68,7 @@ namespace OgreSND {
 
 		//Special treatment for background source and buffer
 		ALuint backgroundMusicBuffer, backgroundMusicSource;
-                ALuint battleSoundSource; //default battle sound source, not entity specific
+        ALuint battleSoundSource; //default battle sound source, not entity specific
 		WaveInfo *backgroundWaveInfo;
 		//unsigned int scvId;
                 //unsigned int soundDictionary[FastEcslent::NENTITYTYPES];
@@ -76,8 +85,7 @@ namespace OgreSND {
 		//int firstIndexNotInUse(bool inUse[], int size);
 		int getEmptySourceIndex();
 		bool resetSource(ALuint sid);
-                
-                bool isEnabled;
+        bool isEnabled;
 
 	public:
 		SoundMgr(Engine* eng);
@@ -91,8 +99,8 @@ namespace OgreSND {
 		void releaseLevel();
 		void cleanup ();
                 
-                void enable();
-                void disable();
+		void enable();
+		void disable();
 
 	    virtual bool frameRenderingQueued(const Ogre::FrameEvent& evt);
 	    virtual bool frameStarted(const Ogre::FrameEvent& evt);
@@ -103,11 +111,9 @@ namespace OgreSND {
 		int printError(const char *ermsg);
 		inline ALenum toALFormat(short channels, short samples);
 		void syncListenerToCamera();
-                void attachSelectedNodeToSoundIndex(Entity381* ent, unsigned int index);
-                //bool playEntityBornSound(FastEcslent::EntityType et, OgreGFX::GFXNode *gfxNode);
-                //bool playExplosionSound(FastEcslent::EntityType et, OgreGFX::GFXNode *gfxNode);
-                //bool playExplosionSound(OgreGFX::GFXNode *gfxNode);
-                bool playSelectionSound(Entity381 et);
+
+		void attachSelectedNodeToSoundIndex(Entity381* ent, unsigned int index);
+		bool playSelectionSound(Entity381 et);
                 
 		//specific for sound managers everywhere
 		bool loadAudio(std::string filename, int sid);
@@ -118,10 +124,10 @@ namespace OgreSND {
 		bool resumeBackground();
 
 		//bool registerCreate(FastEcslent::EntityType et, std::string filename);
-                bool registerSelection(Entity381 et, std::string filename);
-                //bool registerBattleSound(FastEcslent::EntityType et, std::string filename);
-                //bool isEntityShip(FastEcslent::EntityType et);
-                bool initWatercraftSounds();
+		bool registerSelection(Entity381 et, std::string filename);
+		//bool registerBattleSound(FastEcslent::EntityType et, std::string filename);
+		//bool isEntityShip(FastEcslent::EntityType et);
+		bool initWatercraftSounds();
                 
 		bool reserveAudio(std::string filename, bool loop, unsigned int &alSourceInfoIndex);
 		bool releaseSource(ALuint audioId);
