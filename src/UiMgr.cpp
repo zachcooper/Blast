@@ -11,6 +11,8 @@
 #include <InputMgr.h>
 #include <EntityMgr.h>
 #include <Types381.h>
+#include <GameMgr.h>
+
 
 UiMgr::UiMgr(Engine* eng): Mgr(eng){
 	// Initialize the OverlaySystem (changed for Ogre 1.9)
@@ -20,6 +22,7 @@ UiMgr::UiMgr(Engine* eng): Mgr(eng){
 	    //Ogre::WindowEventUtilities::addWindowEventListener(engine->gfxMgr->ogreRenderWindow, this);
 	    health = 1.00;
 	    enemyHealth = 1.00;
+	    score = 0;
 }
 
 UiMgr::~UiMgr(){ // before gfxMgr destructor
@@ -55,6 +58,7 @@ void UiMgr::LoadLevel(){
 
 	Splash();
 	//Hide();
+	mTrayMgr->showBackdrop("myUI");
 	healthButton = mTrayMgr->createButton(OgreBites::TL_LEFT, "HealthButton", "Health Drain");
 	enemyHealthButton = mTrayMgr->createButton(OgreBites::TL_RIGHT, "EnemyHealthButton", "Enemy Drain");
 
@@ -66,6 +70,13 @@ void UiMgr::LoadLevel(){
 	ebar = mTrayMgr->createProgressBar(OgreBites::TL_BOTTOMRIGHT,"EnemyHealthBar", "Enemy Health", 350, 200);
 	ebar->setProgress(enemyHealth);
 
+	std::stringstream ss2;
+	ss2 << score;
+	std::string str2 = ss2.str();
+	scoreLabel = mTrayMgr->createLabel(OgreBites::TL_TOPRIGHT, "Score", str2, 150.0);
+
+
+
 }
 
 void UiMgr::Tick(float dt){
@@ -75,10 +86,10 @@ void UiMgr::Tick(float dt){
 
 	for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i++)
 	{
-		diff = engine->entityMgr->shipEntity->position - engine->entityMgr->entities[i]->position;
+		diff = engine->gameMgr->cameraNode->getPosition() - engine->entityMgr->entities[i]->position;
 		if(engine->entityMgr->entities[i] != engine->entityMgr->shipEntity)
 		{
-			if (diff.length() < 1.0)
+			if (diff.length() < 5.0)
 			{
 				health -= 0.1;
 				pbar->setProgress(health);
@@ -89,6 +100,11 @@ void UiMgr::Tick(float dt){
 	{
 		mTrayMgr->hideLoadingBar();
 	}
+
+	std::stringstream ss2;
+	ss2 << score;
+	std::string str2 = ss2.str();
+	scoreLabel->setCaption(str2);
 }
 
 
