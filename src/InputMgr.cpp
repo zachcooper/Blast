@@ -112,11 +112,11 @@ void InputMgr::UpdateCamera(float dt){
 	  if (mKeyboard->isKeyDown(OIS::KC_S))
 	    dirVec.z += move;
 
-	  if (mKeyboard->isKeyDown(OIS::KC_E))
-	    dirVec.y += move;
+	  if (mKeyboard->isKeyDown(OIS::KC_Q))
+		  engine->gameMgr->cameraNode->pitch(Ogre::Degree(5 * rotate));
 
-	  if (mKeyboard->isKeyDown(OIS::KC_F))
-	    dirVec.y -= move;
+	  if (mKeyboard->isKeyDown(OIS::KC_E))
+		  engine->gameMgr->cameraNode->pitch(Ogre::Degree(-5 * rotate));
 
 	  if (mKeyboard->isKeyDown(OIS::KC_A))
 	  {
@@ -132,6 +132,16 @@ void InputMgr::UpdateCamera(float dt){
 	      engine->gameMgr->cameraNode->yaw(Ogre::Degree(-5 * rotate));
 	    else
 	      dirVec.x += move;
+	  }
+
+	  if (mKeyboard->isKeyDown(OIS::KC_Z))
+	  {
+		  engine->gameMgr->cameraNode->yaw(Ogre::Degree(5 * rotate));
+	  }
+
+	  if (mKeyboard->isKeyDown(OIS::KC_C))
+	  {
+		  engine->gameMgr->cameraNode->yaw(Ogre::Degree(-5 * rotate));
 	  }
 
 	  engine->gameMgr->cameraNode->translate(dirVec * dt, Ogre::Node::TS_LOCAL);
@@ -270,8 +280,11 @@ bool InputMgr::mousePressed(const OIS::MouseEvent& me, OIS::MouseButtonID mid){
         		diffx = (point.x) - (engine->entityMgr->entities[i]->position.x);
         		diffy = (point.y) - (engine->entityMgr->entities[i]->position.y);
         		diffz = (point.z) - (engine->entityMgr->entities[i]->position.z);
+        		engine->gfxMgr->debugDrawer->getSingleton().drawLine(engine->gameMgr->cameraNode->getPosition(), point, Ogre::ColourValue::Red );
 
     			if(diffx <= 150 && diffx >= -150 && diffy <= 150 && diffy >= -150 && diffz <= 150 && diffz >= -150){
+    				engine->uiMgr->score += 10;
+    				engine->uiMgr->enemyHealth = engine->uiMgr->enemyHealth - 0.01;
 					if(engine->entityMgr->entities[i]->isSelected == true){
 						engine->entityMgr->entities[i]->isSelected = false;
 					}
@@ -282,6 +295,13 @@ bool InputMgr::mousePressed(const OIS::MouseEvent& me, OIS::MouseButtonID mid){
     		}
     	}
     }
+    /*
+    if (mid == OIS::MB_Right)
+    {
+    	engine->gameMgr->cameraNode->yaw(Ogre::Degree(-0.1 * me.state.X.rel), Ogre::Node::TS_WORLD);
+    	engine->gameMgr->cameraNode->pitch(Ogre::Degree(-0.1 * me.state.Y.rel), Ogre::Node::TS_LOCAL);
+    }
+    */
 
 return true;
 }

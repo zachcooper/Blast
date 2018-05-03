@@ -42,7 +42,7 @@ void GameMgr::LoadLevel(){
 
 	  // A node to attach the camera to so we can move the camera node instead of the camera.
 	  cameraNode = engine->gfxMgr->mSceneMgr->getRootSceneNode()->createChildSceneNode();
-	  cameraNode->setPosition(0, 200, 500);
+	  cameraNode->setPosition(0, 100, 1000);
 	  cameraNode->attachObject(engine->gfxMgr->mCamera);
 
 	  MakeGround();
@@ -54,14 +54,47 @@ void GameMgr::LoadLevel(){
 void GameMgr::MakeEntities(){
 	Ogre::Vector3 pos = Ogre::Vector3(-1000, 0, 0);
 	Ogre::Vector3 position = Ogre::Vector3(0, 0, 0);
+	float row = 0;
+	int extend = 0;
+	int col = 0;
 
-	for (int i = 0; i < 10; i++){
+	for (int i = 0; i < 100; i++){
 		engine->entityMgr->CreateEntityOfTypeAtPosition(RobotType, position);
-		position.x += 100;
+		position.x += 200;
+		if (i == 10){
+			position = Ogre::Vector3(0, 0, -400);
+		}
+		else if(i == 20){
+			position = Ogre::Vector3(0, 0, -800);
+		}
+		else if(i == 30){
+			position = Ogre::Vector3(0, 0, -1000);
+		}
+		else if(i == 40){
+			position = Ogre::Vector3(0, 0, -1400);
+		}
+		else if(i == 50){
+			position = Ogre::Vector3(0, 0, -1800);
+		}
+		else if(i == 60){
+			position = Ogre::Vector3(0, 0, -2200);
+		}
+		else if(i == 70){
+			position = Ogre::Vector3(0, 0, -2600);
+		}
+		else if(i == 80){
+			position = Ogre::Vector3(0, 0, -3000);
+		}
+		else if(i == 90){
+			position = Ogre::Vector3(0, 0, -3400);
+		}
+		else if(i == 100){
+			position = Ogre::Vector3(0, 0, -3800);
+		}
 	}
 
-	pos.x += 500;
-	engine->entityMgr->CreateEntityOfTypeAtPosition(CarrierType, pos);
+	//pos.x += 500;
+	//engine->entityMgr->CreateEntityOfTypeAtPosition(CarrierType, pos);
 
 	engine->entityMgr->SelectNextEntity(true); //sets selection
 }

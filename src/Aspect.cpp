@@ -6,7 +6,7 @@
  */
 
 #include <Aspect.h>
-#include <Entity381.h>  //Aspect includes Entity381.h
+#include <Entity381.h>
 #include <DebugDrawer.h>
 
 
@@ -41,7 +41,5 @@ void Renderable::Tick(float dt){
 		entity->sceneNode->showBoundingBox(true);
 	else
 		entity->sceneNode->showBoundingBox(false); //or we could do this in the entity mgr every time tab is pressed....
-
-	DebugDrawer::getSingleton().drawLine(entity->sceneNode->getPosition(), entity->sceneNode->getPosition() + Ogre::Vector3(100.0, 100.0, 0.0), Ogre::ColourValue::Red);
 
 }

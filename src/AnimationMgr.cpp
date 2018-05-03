@@ -6,11 +6,12 @@
  */
 
 #include <AnimationMgr.h>
+#include <cstdlib>
+#include <ctime>
 
 AnimationMgr::AnimationMgr(Engine *engine): Mgr(engine) {
-	//mWalkSpeed = 5.0;
-	mAnimation = 0;
-	dirVec = Ogre::Vector3::ZERO;
+    mWalkSpeed = 70.0;
+
 }
 
 AnimationMgr::~AnimationMgr(){
@@ -18,77 +19,78 @@ AnimationMgr::~AnimationMgr(){
 }
 
 void AnimationMgr::Init(){
+	srand(time(NULL));
+    mWalkList.push_back(Ogre::Vector3(550.0, 0, 50.0));
+    mWalkList.push_back(Ogre::Vector3(-100.0, 0, -200.0));
+    mWalkList.push_back(Ogre::Vector3(0, 0, 25.0));
 }
 
 void AnimationMgr::LoadLevel(){
 
 }
 
+bool AnimationMgr::nextLocation(void){
+	for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i ++){
+		if (engine->entityMgr->entities[i]->meshfilename == "robot.mesh"){
+			float rand1  = rand()%2000 - 200;
+			float rand2 = 0.0;
+			float rand3 = rand()%2000 - 200;
+			engine->entityMgr->entities[i]->mDestination = Ogre::Vector3(rand1, rand2, rand3);
+		}
+	}
+
+	for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i ++){
+		if (engine->entityMgr->entities[i]->meshfilename == "robot.mesh"){
+			engine->entityMgr->entities[i]->mDirection = engine->entityMgr->entities[i]->mDestination - engine->entityMgr->entities[i]->sceneNode->getPosition();
+			engine->entityMgr->entities[i]->mDistance = engine->entityMgr->entities[i]->mDirection.normalise();
+		}
+	}
+    return true;
+}
+
+void AnimationMgr::createFrameListener(void){
+
+}
+
 void AnimationMgr::Tick(float dt){
 
-	if (engine->inputMgr->mKeyboard->isKeyDown(OIS::KC_UP)){
-		for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i ++){
-			if (engine->entityMgr->entities[i]->meshfilename == "robot.mesh"){
-				mAnimation = engine->entityMgr->entities[i]->ogreEntity->getAnimationState("Walk");
-				mAnimation->setLoop(true);
-				mAnimation->setEnabled(true);
-				mAnimation->addTime(dt);
+	for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i ++){
+		if (engine->entityMgr->entities[i]->meshfilename == "robot.mesh"){
 
-				engine->entityMgr->entities[i]->position.x += .2;
+			engine->entityMgr->entities[i]->mAnimation = engine->entityMgr->entities[i]->ogreEntity->getAnimationState("Walk");
+			engine->entityMgr->entities[i]->mAnimation->setLoop(true);
+			engine->entityMgr->entities[i]->mAnimation->setEnabled(true);
+			engine->entityMgr->entities[i]->mAnimation->addTime(dt);
 
-				dirVec = engine->entityMgr->entities[i]->position + engine->entityMgr->entities[i]->mWalkSpeed;
-				engine->entityMgr->entities[i]->sceneNode->translate(dirVec * dt);
-			}
-		}
-	}
+			Ogre::Real move = mWalkSpeed * dt;
+			engine->entityMgr->entities[i]->mDistance -= move;
 
-	if (engine->inputMgr->mKeyboard->isKeyDown(OIS::KC_RIGHT)){
-		for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i ++){
-			if (engine->entityMgr->entities[i]->meshfilename == "robot.mesh"){
-				mAnimation = engine->entityMgr->entities[i]->ogreEntity->getAnimationState("Walk");
-				mAnimation->setLoop(true);
-				mAnimation->setEnabled(true);
+			if (engine->entityMgr->entities[i]->mDistance <= 0.0f){
+				engine->entityMgr->entities[i]->sceneNode->setPosition(engine->entityMgr->entities[i]->mDestination);
+				engine->entityMgr->entities[i]->mDirection = Ogre::Vector3::ZERO;
+				// Set animation based on if the robot has another point to walk to.
+				if (!nextLocation()){
+					// Set Idle animation
+					engine->entityMgr->entities[i]->mAnimation = engine->entityMgr->entities[i]->ogreEntity->getAnimationState("Idle");
+					engine->entityMgr->entities[i]->mAnimation->setLoop(true);
+					engine->entityMgr->entities[i]->mAnimation->setEnabled(true);
+					engine->entityMgr->entities[i]->mAnimation->addTime(dt);
+				}else{
+					// Rotation Code will go here later
+					Ogre::Vector3 src = engine->entityMgr->entities[i]->sceneNode->getOrientation() * Ogre::Vector3::UNIT_X;
 
-				engine->entityMgr->entities[i]->position.z += .2;
+					if ((1.0f + src.dotProduct(engine->entityMgr->entities[i]->mDirection)) < 0.0001f) {
+						engine->entityMgr->entities[i]->sceneNode->yaw(Ogre::Degree(180));
 
-				dirVec = engine->entityMgr->entities[i]->position + engine->entityMgr->entities[i]->mWalkSpeed;
-				engine->entityMgr->entities[i]->sceneNode->translate(dirVec * dt);
+					}else{
+						Ogre::Quaternion quat = src.getRotationTo(engine->entityMgr->entities[i]->mDirection);
+						engine->entityMgr->entities[i]->sceneNode->rotate(quat);
 
-				mAnimation->addTime(dt);
-			}
-		}
-	}
-
-	if (engine->inputMgr->mKeyboard->isKeyDown(OIS::KC_LEFT)){
-		for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i ++){
-			if (engine->entityMgr->entities[i]->meshfilename == "robot.mesh"){
-				mAnimation = engine->entityMgr->entities[i]->ogreEntity->getAnimationState("Walk");
-				mAnimation->setLoop(true);
-				mAnimation->setEnabled(true);
-
-				engine->entityMgr->entities[i]->position.z -= .2;
-
-				dirVec = engine->entityMgr->entities[i]->position + engine->entityMgr->entities[i]->mWalkSpeed;
-				engine->entityMgr->entities[i]->sceneNode->translate(dirVec * dt);
-
-				mAnimation->addTime(dt);
-			}
-		}
-	}
-
-	if (engine->inputMgr->mKeyboard->isKeyDown(OIS::KC_DOWN)){
-		for (unsigned int i = 0; i < engine->entityMgr->entities.size(); i ++){
-			if (engine->entityMgr->entities[i]->meshfilename == "robot.mesh"){
-				mAnimation = engine->entityMgr->entities[i]->ogreEntity->getAnimationState("Walk");
-				mAnimation->setLoop(true);
-				mAnimation->setEnabled(true);
-
-				engine->entityMgr->entities[i]->position.x -= .2;
-
-				dirVec = engine->entityMgr->entities[i]->position + engine->entityMgr->entities[i]->mWalkSpeed;
-				engine->entityMgr->entities[i]->sceneNode->translate(dirVec * dt);
-
-				mAnimation->addTime(dt);
+					} // else
+				}//else
+			}else{
+				engine->entityMgr->entities[i]->sceneNode->translate(engine->entityMgr->entities[i]->mDirection * move);
+				engine->entityMgr->entities[i]->position += engine->entityMgr->entities[i]->mDirection * move;
 			}
 		}
 	}
@@ -98,12 +100,7 @@ void AnimationMgr::Stop(){
 
 }
 
-void AnimationMgr::createFrameListener(void){
-
-}
-
 bool AnimationMgr::frameRenderingQueued(const Ogre::FrameEvent &evt){
-
 	return true;
 }
 
@@ -126,11 +123,6 @@ bool AnimationMgr::keyReleased(const OIS::KeyEvent& ke){
 	  default:
 		  break;
 	  }
-	return true;
-}
-
-bool AnimationMgr::nextLocation(void){
-
 	return true;
 }
 

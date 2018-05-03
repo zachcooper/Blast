@@ -19,8 +19,9 @@
 #include <InputMgr.h>
 #include <deque>
 
-class AnimationMgr : Mgr
-{
+class AnimationMgr :	public Mgr,
+		public Ogre::WindowEventListener,
+		public Ogre::FrameListener {
 public:
 
 	AnimationMgr(Engine *engine);
@@ -40,13 +41,9 @@ public:
     virtual bool frameStarted(const Ogre::FrameEvent& evt);
     virtual bool frameEnded(const Ogre::FrameEvent& evt);
 
-    std::vector<Ogre::Vector3*> mDirections;
-    //std::vector<Ogre::AnimationState*> mAnimations;
     std::deque<Ogre::Vector3> mWalkList;
 
-
-    Ogre::AnimationState* mAnimation;
-    Ogre::Vector3 dirVec;
+    Ogre::Real mWalkSpeed;
 };
 
 

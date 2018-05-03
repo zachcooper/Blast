@@ -6,12 +6,6 @@
  */
 
 #include <Engine.h>
-#include <EntityMgr.h>
-#include <GameMgr.h>
-#include <GfxMgr.h>
-#include <InputMgr.h>
-#include <UiMgr.h>
-#include <AnimationMgr.h>
 
 Engine::Engine() {
 	gfxMgr    = 0;
@@ -20,6 +14,7 @@ Engine::Engine() {
 	inputMgr  = 0;
 	uiMgr = 0;
 	animationMgr = 0;
+	soundMgr = 0;
 
 	keepRunning = true;
 
@@ -36,6 +31,7 @@ void Engine::Init(){
 	inputMgr  = new InputMgr(this);
 	uiMgr 	  = new UiMgr(this);
 	animationMgr = new AnimationMgr(this);
+	soundMgr = new OgreSND::SoundMgr(this);
 
 	//--------------------------------------------------------------
 	gfxMgr->Init();
@@ -44,6 +40,7 @@ void Engine::Init(){
 	gameMgr->Init();
 	uiMgr->Init();
 	animationMgr->Init();
+	soundMgr->init();
 
 	//--------------------------------------------------------------
 	gfxMgr->LoadLevel();
@@ -52,6 +49,7 @@ void Engine::Init(){
 	gameMgr->LoadLevel();
 	uiMgr->LoadLevel();
 	animationMgr->LoadLevel();
+	soundMgr->loadLevel();
 }
 
 
@@ -62,6 +60,7 @@ void Engine::TickAll(float dt){
 	gameMgr->Tick(dt);
 	uiMgr->Tick(dt);
 	animationMgr->Tick(dt);
+	soundMgr->tick(dt);
 }
 
 
@@ -92,5 +91,6 @@ void Engine::Cleanup(){
 	gameMgr->Stop();
 	uiMgr->Stop();
 	animationMgr->Stop();
+	soundMgr->Stop();
 }
 

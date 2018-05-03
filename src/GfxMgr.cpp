@@ -21,7 +21,7 @@
 #include <Engine.h>
 #include <GfxMgr.h>
 #include <InputMgr.h>
-#include <DebugDrawer.h>
+
 
 GfxMgr::GfxMgr(Engine *engine): Mgr(engine) {
 
@@ -70,7 +70,7 @@ GfxMgr::GfxMgr(Engine *engine): Mgr(engine) {
   mSceneMgr = mRoot->createSceneManager(Ogre::ST_GENERIC);
 
   mCamera = mSceneMgr->createCamera("MainCam");
-  mCamera->setPosition(0, 0, 80);
+  mCamera->setPosition(0, 0, 0);
   mCamera->lookAt(0, 0, -300);
   mCamera->setNearClipDistance(5);
 
@@ -83,7 +83,8 @@ GfxMgr::GfxMgr(Engine *engine): Mgr(engine) {
 
   //-----------------------------------------------------------------------
   Ogre::WindowEventUtilities::addWindowEventListener(mWindow, this);
-  new DebugDrawer(mSceneMgr, 0.5);
+  debugDrawer = new DebugDrawer(mSceneMgr, 1.0);
+
 }
 
 GfxMgr::~GfxMgr() {

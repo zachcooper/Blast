@@ -8,6 +8,15 @@
 #ifndef ENGINE_H_
 #define ENGINE_H_
 
+#include <SoundMgr.h>
+#include <EntityMgr.h>
+#include <GameMgr.h>
+#include <GfxMgr.h>
+#include <InputMgr.h>
+#include <UiMgr.h>
+#include <AnimationMgr.h>
+#include <SoundMgr.h>
+
 class EntityMgr;
 class GameMgr;
 class GfxMgr;
@@ -26,6 +35,7 @@ public:
 	InputMgr  *inputMgr;
 	UiMgr	  *uiMgr;
 	AnimationMgr *animationMgr;
+	OgreSND::SoundMgr *soundMgr;
 
 	void Init();
 	void Run();

@@ -16,17 +16,18 @@
 #include <Mgr.h>
 
 #include <SdkTrays.h>
+#include <string>
 
 class UiMgr : public Mgr, public Ogre::FrameListener, public OIS::KeyListener, public OIS::MouseListener, public Ogre::WindowEventListener, public OgreBites::SdkTrayListener
 {
 private:
 
-	Ogre::Real health;
-	Ogre::Real enemyHealth;
+
 	OgreBites::ProgressBar * pbar;
 	OgreBites::ProgressBar * ebar;
 	OgreBites::Button* healthButton;
 	OgreBites::Button* enemyHealthButton;
+	OgreBites::Label* scoreLabel;
 
 
 protected:
@@ -56,6 +57,10 @@ public:
 	OgreBites::SdkTrayManager* mTrayMgr;
 	Ogre::OverlaySystem* mOverlaySystem;
 	OgreBites::Label *mLabel;
+	int score;
+	std::string scoreString;
+	Ogre::Real health;
+	Ogre::Real enemyHealth;
 };
 
 #endif /* INC_UIMGR_H_ */

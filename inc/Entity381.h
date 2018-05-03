@@ -36,6 +36,12 @@ public:
   float desiredHeading, desiredSpeed;
   float heading, speed;
 
+  // robots
+  Ogre::Vector3 mDirection;
+  Ogre::Vector3 mDestination;
+  Ogre::Real mDistance;
+  Ogre::AnimationState* mAnimation;
+
   //sound
 	std::string soundFile;
 	bool playSound;
